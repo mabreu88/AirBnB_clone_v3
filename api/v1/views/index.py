@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Flask app"""
-from flask import Flask, Blueprint, jsonify, request
 from api.v1.views import app_views
 from models import storage
+from flask import jsonify, request
 
 
 @app_views.route('/status', methods=['GET'])
