@@ -6,6 +6,9 @@ from models import storage
 
 
 @app_views.route('/status', methods=['GET'])
-def status():
+def statusRoute():
+    """Status Route"""
     if request.method == 'GET':
-        return jsonify({"status": "OK"})
+        return jsonify({
+        "status": "OK"
+    })
