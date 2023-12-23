@@ -21,8 +21,9 @@ def page_not_found(error):
     """ handler for 404 errors """
     return jsonify({"error": "Not found"}), 404
 
+
 if __name__ == '__main__':
     """Main function of Flask app"""
-    app.run(host=os.getenv('HBNB_API_HOTS', '0.0.0.0'),
+    app.run(host=os.getenv('HBNB_API_HOST', '0.0.0.0'),
             port=os.getenv('HBNH_API_PORT', 5000),
             threaded=True)
