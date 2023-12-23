@@ -9,6 +9,4 @@ from models import storage
 def statusRoute():
     """Status Route"""
     if request.method == 'GET':
-        return jsonify({
-        "status": "OK"
-    })
+        return jsonify({"status": "OK"})
