@@ -11,6 +11,7 @@ def statusRoute():
     if request.method == 'GET':
         return jsonify({"status": "OK"})
 
+
 @app_views.route('/stats')
 def count():
     """ Count objects """
