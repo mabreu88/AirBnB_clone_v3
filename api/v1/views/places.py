@@ -65,6 +65,7 @@ def postPlaces(city_id):
 
         from models.user import User
         if storage.get(User, data.get('user_id')) is None:
+            from flask import abort
             return abort(404)
 
         if data.get("name") is None:
