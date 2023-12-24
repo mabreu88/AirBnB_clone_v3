@@ -42,7 +42,7 @@ def deleteUser(user_id):
         return abort(404)
 
 
-@app_views.post('/api/v1/users/')
+@app_views.post('/users/')
 def postUser():
     """Posts a new State"""
     from flask import request
