@@ -8,7 +8,7 @@ from api.v1.views import app_views
 
 all_states = storage.all(State)
 
-@app_views.route('/states/', methods=["GET"])
+@app_views.route('/states', methods=["GET"])
 def getStates():
     """GET route to return all States"""
     all_states_arr = [obj.to_dict() for obj in all_states.values()]
