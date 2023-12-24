@@ -7,7 +7,7 @@ from models.user import User
 from api.v1.views import app_views
 
 
-@app_views.get('/users/')
+@app_views.get('/users')
 def getUsers():
     """GET route to return all Users"""
     users = storage.all(User)
@@ -42,7 +42,7 @@ def deleteUser(user_id):
         return abort(404)
 
 
-@app_views.post('/api/v1/users')
+@app_views.post('/api/v1/users/')
 def postUser():
     """Posts a new State"""
     from flask import request
