@@ -2,13 +2,15 @@
 """App module using Flask"""
 
 from models import storage
+from flask import jsonify
 from models.state import State
 from api.v1.views import app_views
 
-all_states = storage.all(State)
 
-@app_views.route('/states', methods=["GET"])
+@app_views.route('/states', methods=["GET"], strict_slashes=False)
 def getStates():
     """GET route to return all States"""
-    all_states_arr = [obj.to_dict() for obj in all_states.values()]
-    return all_states_arr
+    all_states = []
+    for states in storage.all('State').values():
+        all_states.append(states.to_dict())
+    return jsonify(all_states)
