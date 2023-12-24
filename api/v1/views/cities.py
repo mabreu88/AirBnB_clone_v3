@@ -16,10 +16,11 @@ def getCitiesOfState(state_id):
     if state is None:
         from flask import abort
         return abort(404)
-    
+
     cities = state.cities
     dict_cities = [x.to_dict() for x in cities]
     return jsonify(dict_cities)
+
 
 @app_views.get('/cities/<city_id>')
 def getCity(city_id):
@@ -48,14 +49,14 @@ def deleteCityId(city_id):
         return abort(404)
 
 
-@app_views.post('/states/<state_id>/cities')
+@app_views.post('/states/<state_id>/cities/')
 def postCity(state_id):
     """Posts a new State"""
     from flask import request
     obj = storage.get(State, state_id)
     if obj is None:
-            from flask import abort
-            return abort(404)
+        from flask import abort
+        return abort(404)
 
     if request.is_json:
         data = request.get_json()

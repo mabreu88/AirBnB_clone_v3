@@ -15,6 +15,7 @@ def getStates():
         all_states.append(states.to_dict())
     return jsonify(all_states)
 
+
 @app_views.get('/states/<state_id>')
 def stateId(state_id):
     """GET route to return one specific State"""
