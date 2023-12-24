@@ -23,7 +23,7 @@ def getPlacesOfCity(city_id):
 
 
 @app_views.get('/places/<place_id>')
-def getCity(place_id):
+def getPlace(place_id):
     """GET route to return one specific Place"""
     place = storage.get(City, place_id)
     if place is None:
@@ -34,7 +34,7 @@ def getCity(place_id):
 
 
 @app_views.delete('/places/<place_id>')
-def deleteCityId(place_id):
+def deletePlaceId(place_id):
     """DELETE route to delete a Place"""
     try:
         obj = storage.get(Place, place_id)
@@ -50,7 +50,7 @@ def deleteCityId(place_id):
 
 
 @app_views.post('/cities/<city_id>/places/')
-def postCity(city_id):
+def postPlaces(city_id):
     """Posts a new State"""
     from flask import request
     obj = storage.get(City, city_id)
@@ -80,7 +80,7 @@ def postCity(city_id):
 
 
 @app_views.put('/places/<place_id>')
-def putCities(place_id):
+def putPlaces(place_id):
     obj = storage.get(Place, place_id)
 
     if obj is None:
