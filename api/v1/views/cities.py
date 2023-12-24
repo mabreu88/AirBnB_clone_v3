@@ -18,9 +18,6 @@ def getCitiesOfState(state_id):
         return abort(404)
     
     cities = state.cities
-    if len(cities) == 0:
-        return abort(404)
-
     dict_cities = [x.to_dict() for x in cities]
     return jsonify(dict_cities)
 
